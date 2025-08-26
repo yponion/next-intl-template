@@ -1,4 +1,5 @@
 name: "feat"
+description: "기능 추가"
 labels: "enhancement"
 title: "feat: "
 body:
