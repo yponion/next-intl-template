@@ -1,4 +1,6 @@
+import Navigation from '@/components/Navigation';
 import NotFound from '@/components/NotFound';
+import { ThemeProvider } from '@/components/theme-provider';
 import { NextIntlClientProvider } from 'next-intl';
 
 // This page renders when a route like `/unknown.txt` is requested.
@@ -10,7 +12,15 @@ export default function GlobalNotFound() {
     <html lang="en">
       <body>
         <NextIntlClientProvider>
-          <NotFound />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navigation />
+            <NotFound />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

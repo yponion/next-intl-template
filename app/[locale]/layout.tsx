@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
+import { ThemeProvider } from '@/components/theme-provider';
 
 type Props = {
   children: React.ReactNode;
@@ -28,11 +29,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className="bg-background dark:bg-black">
-      <body className="dark:bg-red-300">
+    <html lang={locale} suppressHydrationWarning>
+      <body>
         <NextIntlClientProvider>
-          <Navigation />
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navigation />
+            {children}
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
