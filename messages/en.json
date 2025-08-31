@@ -13,18 +13,23 @@
     "home": "Home",
     "test": "Test"
   },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, en {🇺🇸 English} ko {🇰🇷 한국어} other {Unknown}}"
+  },
+  "ThemeSwitcher": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "Navigation": {
+    "home": "Home",
+    "test": "Test"
+  },
   "Home": {
     "title": "home page"
   },
   "Test": {
     "title": "test page"
-  },
-  "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, en {🇺🇸 English} ko {🇰🇷 한국어} other {Unknown}}"
-  },
-  "Navigation": {
-    "home": "Home",
-    "test": "Test"
   }
 }

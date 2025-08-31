@@ -13,18 +13,23 @@
     "home": "홈",
     "test": "테스트"
   },
+  "LocaleSwitcher": {
+    "label": "언어 변경",
+    "locale": "{locale, select, en {🇺🇸 English} ko {🇰🇷 한국어} other {Unknown}}"
+  },
+  "ThemeSwitcher": {
+    "light": "라이트",
+    "dark": "다크",
+    "system": "시스템"
+  },
+  "Navigation": {
+    "home": "홈",
+    "test": "테스트"
+  },
   "Home": {
     "title": "홈 페이지"
   },
   "Test": {
     "title": "테스트 페이지"
-  },
-  "LocaleSwitcher": {
-    "label": "언어 변경",
-    "locale": "{locale, select, en {🇺🇸 English} ko {🇰🇷 한국어} other {Unknown}}"
-  },
-  "Navigation": {
-    "home": "홈",
-    "test": "테스트"
   }
 }
