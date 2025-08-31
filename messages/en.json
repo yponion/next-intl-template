@@ -1,0 +1,30 @@
+{
+  "Common": {
+    "service-name": "next-intl-template"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking\nfor does not exist.",
+    "go-to-home": "Go to home",
+    "or-see-our-site-map": "Or see our site map"
+  },
+  "Sitemap": {
+    "title": "Site Map",
+    "home": "Home",
+    "test": "Test"
+  },
+  "Home": {
+    "title": "home page"
+  },
+  "Test": {
+    "title": "test page"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, en {🇺🇸 English} ko {🇰🇷 한국어} other {Unknown}}"
+  },
+  "Navigation": {
+    "home": "Home",
+    "test": "Test"
+  }
+}
