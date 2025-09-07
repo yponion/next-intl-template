@@ -4,6 +4,7 @@ import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import { ThemeProvider } from '@/components/theme-provider';
+import Footer from '@/components/Footer';
 
 type Props = {
   children: React.ReactNode;
@@ -40,6 +41,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           >
             <Navigation />
             {children}
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
