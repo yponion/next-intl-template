@@ -10,9 +10,9 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
-import Link from './Link';
-import { Button } from './ui/button';
-import { useState, useEffect } from 'react';
+import Link from '@/components/Link';
+import { Button } from '@/components/ui/button';
+import { useState, useEffect, useMemo } from 'react';
 import { cn } from '@/lib/utils';
 
 export default function Navigation({
@@ -21,6 +21,7 @@ export default function Navigation({
   isFixedTop?: boolean;
 }) {
   const t = useTranslations('Navigation');
+  const commonT = useTranslations('Common');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -36,16 +37,15 @@ export default function Navigation({
     };
   }, [isOpen]);
 
-  const menu = [
-    {
-      label: t('home'),
-      href: '/',
-    },
-    {
-      label: t('test'),
-      href: '/test',
-    },
-  ];
+  const menu = useMemo(
+    () => [
+      {
+        label: t('test'),
+        href: '/test',
+      },
+    ],
+    [t]
+  );
 
   return (
     <>
@@ -57,25 +57,7 @@ export default function Navigation({
         )}
       >
         <div className="max-w-5xl justify-between flex-1 flex items-center">
-          <Button
-            className="lg:hidden relative"
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <X
-              className={cn(
-                'absolute transition-all duration-300',
-                !isOpen && 'opacity-0'
-              )}
-            />
-            <Menu
-              className={cn(
-                'absolute transition-all duration-300',
-                isOpen && 'opacity-0'
-              )}
-            />
-          </Button>
+          <Link href="/">{commonT('service-name')}</Link>
           <div
             className={cn(
               'max-lg:bg-background max-lg:px-4 max-lg:transition-all max-lg:w-screen max-lg:duration-300 max-lg:block max-lg:h-0 max-lg:overflow-hidden max-lg:absolute max-lg:top-16 max-lg:left-0 max-lg:z-10',
@@ -100,6 +82,25 @@ export default function Navigation({
           <div className="flex items-center gap-2">
             <LocaleSwitcher />
             <ThemeSwitcher />
+            <Button
+              className="lg:hidden relative"
+              variant="outline"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <X
+                className={cn(
+                  'absolute transition-all duration-300',
+                  !isOpen && 'opacity-0'
+                )}
+              />
+              <Menu
+                className={cn(
+                  'absolute transition-all duration-300',
+                  isOpen && 'opacity-0'
+                )}
+              />
+            </Button>
           </div>
         </div>
       </div>
