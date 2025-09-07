@@ -31,5 +31,9 @@
   },
   "Test": {
     "title": "test page"
+  },
+  "Footer": {
+    "copyright": "© {year} Yang jeong un. All rights reserved.",
+    "sitemap": "Sitemap"
   }
 }
