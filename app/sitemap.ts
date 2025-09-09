@@ -12,8 +12,7 @@ type Href = Parameters<typeof getPathname>[0]['href'];
 
 function getEntries(href: Href) {
   return {
-    url: getUrl(href),
-    lastModified: new Date(),
+    url: getUrl(href) + 'en',
     alternates: {
       languages: Object.fromEntries(
         routing.locales.map((cur) => [cur, getUrl(href, cur)])
