@@ -5,14 +5,14 @@ import { routing } from '@/i18n/routing';
 import { getPathname } from '@/i18n/navigation';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [getEntries('/')];
+  return [getEntries('/'), getEntries('/test')];
 }
 
 type Href = Parameters<typeof getPathname>[0]['href'];
 
 function getEntries(href: Href) {
   return {
-    url: getUrl(href) + routing.defaultLocale,
+    url: getUrl(href),
     alternates: {
       languages: Object.fromEntries(
         routing.locales.map((cur) => [cur, getUrl(href, cur)])
@@ -22,7 +22,7 @@ function getEntries(href: Href) {
 }
 
 function getUrl(href: Href, locale?: Locale) {
-  if (!locale) return host + href;
+  if (!locale) return host + '/' + routing.defaultLocale + href;
 
   const pathname = getPathname({ locale, href });
   return host + pathname;
